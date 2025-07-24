@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1E3E724-7B87-48BC-8E5C-652A9D9E5E7C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameHeader</RootNamespace>
+    <AssemblyName>Game Header</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GameHeader.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>searching.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SevenZipSharp">
+      <HintPath>.\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ABox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABox.Designer.cs">
+      <DependentUpon>ABox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abstract\Game.cs" />
+    <Compile Include="Abstract\GameFileInfo.cs" />
+    <Compile Include="Abstract\Processor.cs" />
+    <Compile Include="Abstract\SNESCartType.cs" />
+    <Compile Include="Abstract\SNESROMType.cs" />
+    <Compile Include="Abstract\SystemName.cs" />
+    <Compile Include="Abstract\SystemType.cs" />
+    <Compile Include="Abstract\Units.cs" />
+    <Compile Include="Abstract\Util.cs" />
+    <Compile Include="BlockReadEventHandler.cs" />
+    <Compile Include="CRC16.cs" />
+    <Compile Include="CRC32.cs" />
+    <Compile Include="Abstract\CSVExport.cs" />
+    <Compile Include="FileBackgroundWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FileCompletedEventArgs.cs" />
+    <Compile Include="FileCompletedEventHandler.cs" />
+    <Compile Include="FileStartedEventArgs.cs" />
+    <Compile Include="FileStartedEventHandler.cs" />
+    <Compile Include="FileWorkerInfo.cs" />
+    <Compile Include="GForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GForm.Designer.cs">
+      <DependentUpon>GForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INI.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgressUpdateEventArgs.cs" />
+    <Compile Include="ProgressUpdateEventHandler.cs" />
+    <Compile Include="ProgressUpdateInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systems\FDSFileHeader.cs" />
+    <Compile Include="Systems\FDSGame.cs" />
+    <Compile Include="Systems\FDSHeader.cs" />
+    <Compile Include="Systems\FDSNumberBlock.cs" />
+    <Compile Include="Systems\FDSProcessor.cs" />
+    <Compile Include="Systems\FDSSideHeader.cs" />
+    <Compile Include="Systems\GBAGame.cs" />
+    <Compile Include="Systems\GBAHeader.cs" />
+    <Compile Include="Systems\GBAProcessor.cs" />
+    <Compile Include="Systems\GBCGame.cs" />
+    <Compile Include="Systems\GBCHeader.cs" />
+    <Compile Include="Systems\GBCProcessor.cs" />
+    <Compile Include="Systems\GBGame.cs" />
+    <Compile Include="Systems\GBHeader.cs" />
+    <Compile Include="Systems\GBProcessor.cs" />
+    <Compile Include="Systems\GeneralGame.cs" />
+    <Compile Include="Systems\GeneralProcessor.cs" />
+    <Compile Include="Systems\N64Game.cs" />
+    <Compile Include="Systems\N64Header.cs" />
+    <Compile Include="Systems\N64Processor.cs" />
+    <Compile Include="Systems\NDSEcryptor.cs" />
+    <Compile Include="Systems\NDSGame.cs" />
+    <Compile Include="Systems\NDSHeader.cs" />
+    <Compile Include="Systems\NDSIcon.cs" />
+    <Compile Include="Systems\NDSProcessor.cs" />
+    <Compile Include="Systems\NESGame.cs" />
+    <Compile Include="Systems\NESHeader.cs" />
+    <Compile Include="Systems\NESiNESHeader.cs" />
+    <Compile Include="Systems\NESProcessor.cs" />
+    <Compile Include="Systems\NGCGame.cs" />
+    <Compile Include="Systems\NGCHeader.cs" />
+    <Compile Include="Systems\NGCProcessor.cs" />
+    <Compile Include="Systems\SNESGame.cs" />
+    <Compile Include="Systems\SNESHeader.cs" />
+    <Compile Include="Systems\SNESProcessor.cs" />
+    <Compile Include="UpdateLogEventArgs.cs" />
+    <Compile Include="UpdateLogEventHandler.cs" />
+    <Compile Include="UpdateLogInfo.cs" />
+    <Compile Include="WorkCompletedEventHandler.cs" />
+    <Compile Include="ZipEntryCompletedEventArgs.cs" />
+    <Compile Include="ZipEntryCompletedEventHandler.cs" />
+    <Compile Include="ZipEntryStartedEventArgs.cs" />
+    <Compile Include="ZipEntryStartedEventHandler.cs" />
+    <Compile Include="ZipWorkerInfo.cs" />
+    <EmbeddedResource Include="ABox.resx">
+      <DependentUpon>ABox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GForm.resx">
+      <DependentUpon>GForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Database.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Settings.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="7z.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="searching.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
